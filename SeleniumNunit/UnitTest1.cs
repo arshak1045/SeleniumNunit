@@ -1,15 +1,13 @@
+using SeleniumNunit.Utility;
+
 namespace SeleniumNunit
 {
-    public class Tests
+    public class Tests : BaseTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
-        public void Test1()
+        public void Test()
         {
+            Thread.Sleep(5000);
             Assert.Pass();
         }
     }
