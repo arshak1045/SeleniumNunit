@@ -7,6 +7,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace SeleniumNunit.Utility
 {
+    [TestFixture]
     public class BaseTest
     {
         private static IWebDriver _webDriver;
