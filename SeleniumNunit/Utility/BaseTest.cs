@@ -4,7 +4,6 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using System.Configuration;
 using WebDriverManager.DriverConfigs.Impl;
-using Logger = SeleniumNunit.Utility.Logger;
 
 namespace SeleniumNunit.Utility
 {
@@ -18,18 +17,14 @@ namespace SeleniumNunit.Utility
         public void SetupBrowser()
         {
             InitializeBrowser(_browser);
-            Logger.LogInfo($"[{_browser}] browser is launched.");
             _webDriver.Manage().Window.Maximize();
-            Logger.LogInfo($"{_browser} window is maximized.");
             _webDriver.Url = _projectUrl;
-            Logger.LogInfo($"Navigated to the {_projectUrl}.");
         }
 
         [OneTimeTearDown]
         public void CloseBrowser()
         {
             _webDriver.Dispose();
-            Logger.LogInfo($"The {_browser} browser is disposed");
         }
 
         private void InitializeBrowser(string browser)
